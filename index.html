@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GST Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <h2>GST Calculator</h2>
+        <form id="gst_calculator">
+            <div class="form-group">
+                <label>GST Type:</label>
+                <input id="GST_Exclusive" type="radio" name="gst_option" value="exclusive"><label for="GST_Exclusive">Exclusive</label>
+                <input id="GST_Inclusive" type="radio" name="gst_option" value="inclusive"><label for="GST_Inclusive">Inclusive</label>
+            </div>
+            <div class="form-group">
+                <label for="cost">Cost of Goods/Services:</label>
+                <input id="cost" type="text" name="cost" pattern="^[0-9]+(\.[0-9]*)?$" title="Enter a positive number">
+            </div>
+            <div class="form-group">
+                <label>Select GST Rate:</label>
+                <div>
+                    <input class="gst-rate" type="radio" name="gst_rate" value="3%">3%
+                    <input class="gst-rate" type="radio" name="gst_rate" value="5%">5%
+                    <input class="gst-rate" type="radio" name="gst_rate" value="12%">12%
+                    <input class="gst-rate" type="radio" name="gst_rate" value="18%">18%
+                    <input class="gst-rate" type="radio" name="gst_rate" value="28%">28%
+                </div>
+            </div>
+            <div class="form-group" id="profit_section">
+                <label for="profit_ratio">Profit Ratio (optional):</label>
+                <input id="profit_ratio" type="text" pattern="^[0-9]+(\.[0-9]*)?$" title="Enter a positive number">
+            </div>
+            <div class="result">
+                <p><strong>Total Cost of Selling:</strong> <span id="cost_of_selling">Rs. 0</span></p>
+                <p><strong>Total GST:</strong> <span id="total_gst">Rs. 0</span></p>
+                <p id="profit_display"><strong>Total Profit:</strong> <span id="total_profit">Rs. 0</span></p>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
